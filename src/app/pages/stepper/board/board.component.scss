@@ -6,7 +6,6 @@
 .hideColumns {
   display: none;
 }
-
 .container {
   display: flex;
   justify-content: space-between;
@@ -79,6 +78,8 @@ mat-list {
   gap: 1rem;
   align-items: center;
   margin-top: 25px;
+
+  margin: 6px auto;
 }
 
 mat-label.label {
@@ -108,7 +109,7 @@ mat-progress-bar {
   width: 15rem;
   margin-top: 15px;
 }
-//------------------------------------------------
+
 @media (max-width: 1450px) {
   form {
     width: 100%;
@@ -140,14 +141,6 @@ mat-progress-bar {
 
   thead {
     display: none;
-  }
-
-  tbody .vertical {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 0.8rem;
   }
 
   td {
@@ -189,7 +182,6 @@ mat-progress-bar {
   }
   td.btn-up div {
     margin: 0;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -204,7 +196,6 @@ mat-progress-bar {
 @media (max-width: 1024px) {
   //------update
   .update {
-    // background-color: red;
     width: 100%;
     margin: 0 auto;
   }
@@ -213,18 +204,15 @@ mat-progress-bar {
     width: 80%;
     background-color: transparent;
     padding: 0;
-    // background-color: #504a90;
     margin: 0 auto;
   }
 
   .wrapperUpdate {
-    // background-color: yellow;
     width: 90%;
     margin: 0 auto;
   }
   .tableUpdate {
     width: 80%;
-    // background-color: green;
     margin: 0 auto;
   }
 
@@ -251,67 +239,11 @@ mat-progress-bar {
     width: 90vw;
   }
   .tableForms {
-    padding: 0.2rem;
     width: 80%;
-    background-color: transparent;
-    padding: 0;
   }
 
   .wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    column-gap: 0.2rem;
     width: 80%;
-  }
-  table {
-    width: 100%;
-  }
-  thead {
-    display: none;
-  }
-
-  tbody .vertical {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 0.8rem;
-  }
-
-  td {
-    width: 100%;
-  }
-  tbody {
-    background-color: transparent;
-  }
-  tbody .mat-form-field {
-    width: 100%;
-    padding: 0 2rem;
-  }
-
-  .mat-form-field input {
-    margin: 0 auto;
-  }
-  .mat-form-field {
-    width: 100%;
-    padding: 0;
-  }
-
-  .scroll {
-    // display: none;
-  }
-
-  .showColumns {
-    display: block;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: #504a90;
-    margin-bottom: 0.3rem;
-  }
-
-  .add-td {
-    display: flex;
-    align-items: center;
   }
 
   .primary-button {
@@ -323,42 +255,14 @@ mat-progress-bar {
   form {
     width: 100vw;
   }
-  .tableForms {
-    padding: 0.2rem;
-    width: 80%;
-    background-color: transparent;
-    padding: 0;
-  }
 
   .wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    column-gap: 0.2rem;
     width: 80%;
-  }
-  //------update
-  .update {
-    // background-color: red;
-    width: 100%;
-    margin: 0 auto;
-  }
-  .tableFormsUpdate {
-    padding: 0.2rem;
-    width: 80%;
-    background-color: transparent;
-    padding: 0;
-    // background-color: #504a90;
-    margin: 0 auto;
   }
 
-  .wrapperUpdate {
-    // background-color: yellow;
-    width: 90%;
-    margin: 0 auto;
-  }
   .tableUpdate {
     width: 80%;
-    // background-color: green;
+
     margin: 0 auto;
   }
 
@@ -366,9 +270,6 @@ mat-progress-bar {
     width: 80%;
     margin: 0 auto;
   }
-  // .addUpdateBtn {
-  //   margin-left: 2rem;
-  // }
 
   .addUpdateBtn.add-board {
     margin-left: 2rem;
@@ -383,60 +284,22 @@ mat-progress-bar {
   .addUpdateBtn.primary-button {
     margin-left: 4rem;
   }
-  //----------------------
-  table {
-    width: 100%;
-  }
-  thead {
-    display: none;
-  }
 
-  tbody .vertical {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 0.8rem;
-  }
-
-  td {
-    width: 100%;
-  }
-  tbody {
-    background-color: transparent;
-  }
   tbody .mat-form-field {
     width: 100%;
     padding: 0 2rem;
   }
 
-  .mat-form-field input {
-    margin: 0 auto;
-  }
-  .mat-form-field {
-    width: 100%;
-    padding: 0;
-  }
-
   .scroll {
-    width: 70%;
+    // width: 40%;
     margin: 6px auto;
   }
-
-  .showColumns {
-    display: block;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: #504a90;
-    margin-bottom: 0.3rem;
+  .scroll mat-list {
+    width: 90%;
   }
 
   .add-td {
     display: flex;
     align-items: center;
-  }
-
-  .primary-button {
-    margin: 1rem;
   }
 }
