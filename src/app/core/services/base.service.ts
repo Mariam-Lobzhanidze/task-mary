@@ -9,23 +9,20 @@ export class BaseService {
   http: HttpClient = inject(HttpClient);
 
   post<T>(url: string, body?: any): Observable<T> {
-    return this.http.post<T>(this.apiUrl + url, body, {
-      withCredentials: true,
-    });
+    return this.http.post<T>(this.apiUrl + url, body);
   }
 
   get<T>(url: string, params = {}): Observable<T> {
     return this.http.get<T>(this.apiUrl + url, {
       params: params,
-      withCredentials: true,
     });
   }
 
   delete<T>(url: string): Observable<T> {
-    return this.http.delete<T>(this.apiUrl + url, { withCredentials: true });
+    return this.http.delete<T>(this.apiUrl + url);
   }
 
   put<T>(url: string, body?: any): Observable<T> {
-    return this.http.put<T>(this.apiUrl + url, body, { withCredentials: true });
+    return this.http.put<T>(this.apiUrl + url, body);
   }
 }
