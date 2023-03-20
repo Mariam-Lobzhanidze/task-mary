@@ -9,7 +9,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { of, switchMap, takeUntil } from 'rxjs';
 import { Subject } from 'rxjs';
 
-
 import { TaskStatus } from 'src/app/core/enums/taskStatus.enum';
 import { BoardResponse } from 'src/app/core/interfaces';
 import { BoardFacadeService } from 'src/app/facades/board-facade.service';
@@ -169,8 +168,6 @@ export class BoardComponent implements OnInit, OnDestroy {
 
           this.myBoards = res.sort((a, b) => a.id - b.id);
 
-          console.log('boards');
-          console.log(this.myBoards);
           this._snackBar.open('Board Created', 'Close', { duration: 1000 });
           setTimeout(() => {
             this.active = false;
@@ -184,8 +181,6 @@ export class BoardComponent implements OnInit, OnDestroy {
           this.boardFormGroup.reset();
         });
     } else {
-      console.log(this.boardFormGroup.value);
-
       this.boardFacadeService
         .updateBoardById(
           this.boardFormGroup.value.id,
@@ -194,14 +189,11 @@ export class BoardComponent implements OnInit, OnDestroy {
         .pipe(takeUntil(this.sub$))
         .subscribe((response: BoardResponse) => {
           console.log(response);
-
+          this.router.navigate([`/task/project-board/${this.boardId}`]);
           this.goNextStep = true;
           this.createBoard = false;
-          // this.boardFormGroup.reset();
+          this.boardFacadeService.update$.next(true);
         });
-
-      this.router.navigate([`/task/project-board/${this.boardId}`]);
-      this.boardFacadeService.update$.next(true);
     }
   }
 
