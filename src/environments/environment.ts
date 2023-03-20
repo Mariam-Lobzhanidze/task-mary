@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://backend-manager-mary.herokuapp.com/api/',
+  apiUrl: 'https://task-manager-backend-2.vercel.app/api/',
 };
 
 /*
