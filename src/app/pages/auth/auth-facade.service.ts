@@ -91,9 +91,11 @@ export class AuthFacadeService extends AuthService {
   }
 
   signOut() {
+    console.log('Deleting tokens from cookies...');
     localStorage.clear();
     this.cookieStorageService.deleteCookie('token');
     this.cookieStorageService.deleteCookie('refreshToken');
     this.cookieStorageService.deleteCookie('roles');
+    console.log('Tokens deleted from cookies.');
   }
 }
