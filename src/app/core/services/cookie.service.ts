@@ -22,7 +22,8 @@ export class CookieStorageService {
   }
 
   deleteCookie(name: string) {
-    this.cookieService.delete(name);
+    // this.cookieService.delete(name);
+    document.cookie = name + '=; Max-Age=-99999999;';
   }
 
   deleteAllCookies() {
