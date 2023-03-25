@@ -99,9 +99,11 @@ export class CreateProjectComponent implements OnInit, OnDestroy {
           tap((res) => this.projectFacadeService.setProject(res.id)),
           switchMap(() => this.projectFacadeService.getOnlyMyProjects$())
         )
-        .subscribe((response) => {});
+        .subscribe((response) => {
+          this.router.navigate(['/tables']);
+        });
 
-      this.router.navigate(['/tables']);
+      // this.router.navigate(['/tables']);
     }
   }
   goTo() {
