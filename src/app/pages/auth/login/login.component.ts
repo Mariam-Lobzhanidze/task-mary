@@ -9,6 +9,7 @@ import { AuthResponse, UsersResponse } from '../../../core/interfaces';
 import { CookieStorageService } from '../../../core/services/cookie.service';
 import { RoleHttpService } from '../../../core/services/role-http.service';
 import { first } from 'rxjs/operators';
+import { StepperService } from '../../stepper/stepper.service';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +27,8 @@ export class LoginComponent implements OnInit, OnDestroy {
     private projectFacadeService: ProjectFacadeService,
     private readonly fb: NonNullableFormBuilder,
     private cookieService: CookieStorageService,
-    private roleService: RoleHttpService
+    private roleService: RoleHttpService,
+    private stepperService: StepperService
   ) {
     this.loginForm = fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -87,6 +89,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.router.navigate(['/task']);
       } else {
         this.router.navigate(['/stepper']);
+        this.stepperService.goToStep(0);
       }
     });
   }
